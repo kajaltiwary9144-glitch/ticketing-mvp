@@ -5,7 +5,7 @@ services:
       POSTGRES_DB: ticketdb
       POSTGRES_USER: ticketuser
       POSTGRES_PASSWORD: ticketpass
-    ports: ["5433:5432"]
+    ports: ["5434:5432"]
     volumes: [ticket_data:/var/lib/postgresql/data]
 volumes:
   ticket_data:
