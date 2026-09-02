@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/ticketdb}
+    username: ${DB_USER:ticketuser}
+    password: ${DB_PASSWORD:ticketpass}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+server:
+  error:
+    include-message: always

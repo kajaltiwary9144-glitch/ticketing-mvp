@@ -1,0 +1,11 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: ticketdb
+      POSTGRES_USER: ticketuser
+      POSTGRES_PASSWORD: ticketpass
+    ports: ["5432:5432"]
+    volumes: [ticket_data:/var/lib/postgresql/data]
+volumes:
+  ticket_data:
