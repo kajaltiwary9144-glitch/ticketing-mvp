@@ -2,7 +2,7 @@
 
 ## Prioritization
 
-The first priority was a demonstrable vertical slice: login → list → create → update → delete, with data persisted in PostgreSQL. Search/filter and priority were chosen next because they materially improve ticket triage without adding infrastructure. Responsive behavior, validation, tests, and documentation were treated as product requirements rather than optional polish.
+The first priority was a demonstrable vertical slice: login → list → create → update → delete, with data persisted in PostgreSQL. Search/filter, priority management, and ticket details/comments were chosen next because they materially improve triage and collaboration without adding external infrastructure. Responsive behavior, validation, tests, and documentation were treated as product requirements rather than optional polish.
 
 ## Stack trade-offs
 

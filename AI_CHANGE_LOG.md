@@ -14,6 +14,10 @@ AI was used for the initial Maven/Vite structure, entity/repository/controller b
 - Extracted small deterministic frontend utilities and tested them independently.
 - Kept demo authentication honest and narrowly scoped rather than presenting fixed credentials as production security.
 - Deferred WebSockets, attachments, and email instead of including unverified placeholders.
+- Reworked the initial casual card dashboard into a restrained navy/slate enterprise interface with desktop table and mobile cards.
+- Completed priority filtering and sorting rather than only displaying priority labels.
+- Added a persisted ticket activity view with comments and parent-ticket validation.
+- Changed the PostgreSQL host port to `5433` after reproducing a real local port-conflict scenario.
 
 ## Effectiveness
 

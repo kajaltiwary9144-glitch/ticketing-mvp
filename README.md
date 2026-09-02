@@ -1,10 +1,10 @@
 # HelpDesk Ticketing MVP
 
-A responsive full-stack ticketing system completed as a time-boxed AI-assisted assessment. Users can sign in, create and inspect tickets, change their status and priority, search/filter the queue, and delete tickets. All ticket operations use a real Spring Boot API backed by PostgreSQL.
+A responsive full-stack ticketing system completed as a time-boxed AI-assisted assessment. Users can sign in, create and inspect tickets, add comments, change status and priority, search/filter/sort the queue, and delete tickets. All ticket operations use a real Spring Boot API backed by PostgreSQL.
 
 ## Feature selection
 
-The MVP includes simplified authentication, complete ticket CRUD, status workflow, responsive layouts, API validation, and clear error feedback because these form the minimum usable end-to-end journey. Search/filter and priority management were selected as high-value, low-effort enhancements that help agents work through a queue efficiently.
+The MVP includes simplified authentication, complete ticket CRUD, status workflow, responsive layouts, API validation, and clear error feedback because these form the minimum usable end-to-end journey. Search/filter, priority management, and ticket details/comments were selected as high-value enhancements that help agents triage requests and retain investigation context.
 
 WebSockets, attachments, email notifications, dashboard metrics, and advanced role assignment were deliberately excluded. Each adds infrastructure or cross-cutting complexity that would put correctness and testing of the core workflow at risk within the two-hour limit. See [DECISIONS.md](DECISIONS.md) for trade-offs.
 
@@ -25,7 +25,7 @@ cd backend && mvn spring-boot:run
 cd frontend && npm install && npm run dev
 ```
 
-Run the second and third commands in separate terminals. Open `http://localhost:5173` and use `agent@demo.com` / `demo123`.
+Run the second and third commands in separate terminals. Open `http://localhost:5173` and use `agent@demo.com` / `demo123`. PostgreSQL uses host port `5433` to avoid collision with another local PostgreSQL instance.
 
 ## Tests
 
@@ -34,13 +34,14 @@ cd backend && mvn test
 cd frontend && npm test
 ```
 
-Six unit tests cover ticket creation, missing-ticket handling, normalized search, filtering, status formatting, and client-side validation.
+Eight unit tests cover ticket creation, missing-ticket handling, normalized search, comment validation, filtering, priority sorting, status formatting, and client-side validation.
 
 ## Structure
 
 ```text
 backend/src/main/java/com/kajal/ticketing
 ├── auth/       simplified authentication endpoint
+├── comment/    persisted ticket activity and comments
 ├── common/     CORS and centralized exception handling
 └── ticket/     controller, service, repository, entity and DTO
 frontend/src
